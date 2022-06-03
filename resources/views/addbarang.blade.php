@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <form action="{{route('addbook')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('addbarang')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="mb-3">

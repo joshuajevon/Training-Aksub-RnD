@@ -17,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/add', [BarangController::class, 'add'])->name('add');
 
-Route::post('/add-book', [BarangController::class, 'addbook'])->name('addbook');
+Route::post('/add-barang', [BarangController::class, 'addbarang'])->name('addbarang');
 
 Route::get('/', [BarangController::class, 'view'])->name('view');

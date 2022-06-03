@@ -9,7 +9,7 @@ class BarangController extends Controller
 {
     public function add(){
         $barangs = Barang::all();
-        return view('addbook', ['barangs' => $barangs]);
+        return view('addbarang', ['barangs' => $barangs]);
     }
 
     public function view(){
@@ -17,7 +17,7 @@ class BarangController extends Controller
         return view('view', ['barangs' => $barangs]);
     }
 
-    public function addbook(Request $request){
+    public function addbarang(Request $request){
 
         $extension = $request->file('file')->getClientOriginalExtension();
         $namafile = $request->nama.'_'.$request->warna.'.'.$extension;
