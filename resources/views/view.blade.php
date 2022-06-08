@@ -23,6 +23,7 @@
                 <th scope="col">Kuantitas</th>
                 <th scope="col">Warna</th>
                 <th scope="col">Gambar</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -42,6 +43,18 @@
                     </td>
                     <td>
                         <img src="{{asset('storage/image/'.$barang->file)}}" alt="" style="width: 300px">
+                    </td>
+                    <td>
+                        <a href="{{route('editbarang' ,['id' => $barang->id])}}" class="btn btn-primary">Edit
+                        </a>
+                        <form action="{{route('deletebarang', ['id' => $barang->id])}}" method="POST">
+                            @csrf
+                            @method('delete')
+
+                            <button type="submit" class="btn btn-danger">
+                                Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
