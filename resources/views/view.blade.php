@@ -14,6 +14,14 @@
         <button class="btn btn-primary" type="submit">Add Barang</button>
     </form>
 
+    <form action="{{route('addkategori')}}" method="GET">
+        <button class="btn btn-success" type="submit">Add Kategori</button>
+    </form>
+
+    <form action="{{ url('/cari')}}" method="GET" >
+        <input class="form-control me-2"    type="text" placeholder="Cari Nama Kategori" name="cari" aria-label="Search" value="{{ old('cari') }}">
+    </form>
+
 
     <table class="table table-dark">
         <thead>
@@ -23,6 +31,7 @@
                 <th scope="col">Kuantitas</th>
                 <th scope="col">Warna</th>
                 <th scope="col">Gambar</th>
+                <th scope="col">Kategori</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -43,6 +52,14 @@
                     </td>
                     <td>
                         <img src="{{asset('storage/image/'.$barang->file)}}" alt="" style="width: 300px">
+                    </td>
+                    <td>
+                        {{$barang->kategori->namaKategori}}
+
+                        {{-- @foreach ($barang->kategoris as $kategori)
+                            {{$kategori->namaKategori}}
+                        @endforeach --}}
+
                     </td>
                     <td>
                         <a href="{{route('editbarang' ,['id' => $barang->id])}}" class="btn btn-primary">Edit

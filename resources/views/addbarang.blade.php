@@ -32,6 +32,17 @@
             <input name="file" type="file" class="form-control" id="file" value="{{ old('file') }}" placeholder="Masukkan Nama Barang" required>
         </div>
 
+        <div class="mb-3">
+            <label for="kategori" class="form-label">Kategori</label>
+            <select class="form-select" aria-label="Default select example" name="kategori_id" id="kategori">
+                @foreach ($kategoris as $kategori)
+                    <option value="{{$kategori->id}}">
+                        {{$kategori->namaKategori}}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
         <button type="submit" class="btn btn-success">Submit</button>
 
     </form>
